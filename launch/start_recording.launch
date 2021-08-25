@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml version="1.0"?>
+<launch>
+    <!-- recorder arguments -->
+  <arg name="filename" default=''/>
+  <arg name="autostart" default='true'/>
+
+    <!-- recorder node -->
+  <node name="recorder" pkg="rosneuro_recorder" type="recorder" output="screen">
+    <param name="~filename" value="$(arg filename)"/>
+    <param name="~autostart" value="$(arg autostart)"/>
+  </node>
+
+</launch>
