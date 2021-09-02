@@ -6,10 +6,9 @@
   <arg name="filename" default=''/>
   <arg name="autostart" default='true'/>
     
-    <!-- acquisition node -->
-  <node name="acquisition" pkg="rosneuro_acquisition" type="acquisition" output="screen">
-    <param name="~devarg" value="$(arg devarg)"/>
-  </node>
+  <!-- ROSBridge: remote acquisition node (ex: win10) -->
+  <include file="$(find rosneuro_launchers)/launch/start_rosbridge.launch"/> 
+
     <!-- recorder node -->
   <node name="recorder" pkg="rosneuro_recorder" type="recorder" output="screen">
     <param name="~filename" value="$(arg filename)"/>
